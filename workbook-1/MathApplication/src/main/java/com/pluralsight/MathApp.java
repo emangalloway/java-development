@@ -26,14 +26,22 @@ public class MathApp {
 
         // 5.) Find and display the distance between the points (5, 10) and (85, 50)
         double x1 = 5;
-        double x2 = 10;
-        double y1 = 85;
-        double y2 = 50;
-        // subtract x1 -x2, and y1 -y2
-        double sx = x1-x2;
-        double sy = y1-y2;
+        double y1 = 10;
+        double x2 = 85;
+        double y2= 50;
+        // subtract x2 -x1, and y2 -y1
+        double sx = x2-x1;
+        double sy = y2-y1;
         double distance = Math.hypot(sx,sy);
         System.out.println("The Distance between the two points is:"  + distance);
+
+        //Using another method for question 5.
+        int x3 = 5, y3 = 10;
+        int x4 = 85, y4 = 50;
+
+        double secondDistance = Math.sqrt(Math.pow(x3 - x4, 2) + Math.pow(y3 - y4, 2));
+
+        System.out.println("Distance between the points: " + secondDistance);
 
         // 6.) Find and display the absolute (positive) value of a variable after it is set to -3.8
         double originalValue = -3.8;
