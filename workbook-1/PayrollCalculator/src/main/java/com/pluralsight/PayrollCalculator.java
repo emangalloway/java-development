@@ -10,7 +10,8 @@ public class PayrollCalculator {
 
         System.out.println("Hello " +name+ " Please enter how many hours you worked this week: ");
         float num = myScanner.nextFloat();
-        float hourlyRate = 67.52f;
+        System.out.println("Hello "+name+" Enter your pay rate: ");
+        float hourlyRate = myScanner.nextFloat();
 
         System.out.print("You worked "+num+" hours, Your pay rate is: "+hourlyRate+" dollars an hour, Your take home for this pay period is: " +hourlyRate * num);
 
