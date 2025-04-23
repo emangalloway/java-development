@@ -9,6 +9,7 @@ public class CellPhoneApplication {
 
         //Creating object
         CellPhone cellPhone = new CellPhone();
+        CellPhone lukasPhone = new CellPhone();
 
         //Collect information
         System.out.println("What is the serial number? ");
@@ -38,6 +39,8 @@ public class CellPhoneApplication {
         cellPhoneInfo.append("Who is the owner of the phone? ").append(cellPhone.getOwner());
 
         System.out.println(cellPhoneInfo);
+        cellPhone.dial("123-123-1233");
+
 
 
     }
