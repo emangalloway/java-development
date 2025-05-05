@@ -36,7 +36,7 @@ public class StoreApp {
                 System.out.println(bufferedReader);
 
                 while((line = bufferedReader.readLine()) != null){
-                    String      
+                    String
                 }
 
             }catch (Exception e){
