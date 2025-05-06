@@ -40,17 +40,23 @@ public class Room {
             isDirty = true;
         }
     }
+    public void checkInTwo(){
+        if (isAvailable()){
+            isOccupied = true;
+            isDirty = true;
+        }
+    }
 
     //checkOut
     public void checkOut() {
-        if (!isOccupied && isDirty) {
-            isOccupied = true;
+        if (isOccupied && isDirty) {
+            isOccupied = false;
         }
     }
 
     //cleanRoom
     public void cleanRoom(){
-        if (!isOccupied) {
+        if (!isOccupied && isDirty) {
             isDirty = false;
         }
     }
