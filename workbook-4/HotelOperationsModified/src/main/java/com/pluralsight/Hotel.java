@@ -56,11 +56,10 @@ public class Hotel {
         return numberOfRooms - bookedBasicRooms;
     }
 
-    public boolean bookRoom(int numberOfRooms, boolean isSuite){
-    if (numberOfRooms <= 0) {
-        return false;
-    }
-    
-    }
+    /*public boolean bookRoom(int numberOfRooms, boolean isSuite) {
+        if (numberOfRooms <= 0) {
+            return false;
+        }
+    }*/
 }
 

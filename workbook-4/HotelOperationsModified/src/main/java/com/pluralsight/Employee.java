@@ -95,8 +95,8 @@ public class Employee {
         double punchInTime = hour + (min/60);
         startTime = punchInTime;
 
-        double duration = time - punchInTime;
-        hoursWorked += duration;
+        /*double duration = time - punchInTime;
+        hoursWorked += duration;*/
     }
 }
 
