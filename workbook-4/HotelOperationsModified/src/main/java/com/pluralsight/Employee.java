@@ -89,14 +89,13 @@ public class Employee {
     }
 
     public void punchOut(){
-        LocalDateTime time = LocalDateTime.now();
-        int hour = time.getHour();
-        int min = time.getMinute();
-        double punchInTime = hour + (min/60);
-        startTime = punchInTime;
-
-        /*double duration = time - punchInTime;
-        hoursWorked += duration;*/
+        LocalDateTime now = LocalDateTime.now();
+        int hour = now.getHour();
+        int min = now.getMinute();
+        double time = hour + (min/60);
+        double duration = time-startTime;
+        hoursWorked += duration;
+        startTime = 0;
     }
 }
 

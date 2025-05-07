@@ -41,7 +41,7 @@ class RoomTest {
         room2.cleanRoom();
 
         //Assert
-        assertTrue(room2.isAvailable());
+        assertFalse(room2.isDirty());
 
     }
 
