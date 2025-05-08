@@ -12,7 +12,7 @@ public class Employee {
     private double hoursWorked;
     private double startTime;
 
-    public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
+    public Employee(int employeeId, String name, String department, double payRate) {
         this.employeeId = employeeId;
         this.name = name;
         this.department = department;
