@@ -1,0 +1,64 @@
+package com.pluralsight;
+
+public class House extends Asset {
+    private String address;
+    private int condition;
+    private int squareFoot;
+    private int lotSize;
+
+    public House(String description, String dateAcquired, double originalCost, String address, int condition, int squareFoot, int lotSize) {
+        super(description, dateAcquired, originalCost);
+        this.address = address;
+        this.condition = condition;
+        this.squareFoot = squareFoot;
+        this.lotSize = lotSize;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getCondition() {
+        return condition;
+    }
+
+    public void setCondition(int condition) {
+        this.condition = condition;
+    }
+
+    public int getSquareFoot() {
+        return squareFoot;
+    }
+
+    public void setSquareFoot(int squareFoot) {
+        this.squareFoot = squareFoot;
+    }
+
+    public int getLostSize() {
+        return lotSize;
+    }
+
+    public void setLostSize(int lostSize) {
+        this.lotSize = lostSize;
+    }
+
+    @Override
+    public double getValue() {
+        double value = 0;
+        if (condition == 1) {
+            value = (180 * squareFoot);
+        } else if (condition == 2) {
+            value = (130 * squareFoot);
+        } else if (condition == 3) {
+            value = (90 * squareFoot);
+        } else if (condition == 4) {
+            value = (80 * squareFoot);
+        }
+        value += 0.25 * lotSize;
+        return value;
+    }
+}
