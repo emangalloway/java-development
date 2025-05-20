@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+
 public class Vehicle extends Asset{
     private String makeModel;
     private int year;
@@ -38,21 +40,27 @@ public class Vehicle extends Asset{
 
     @Override
     public double getValue() {
-        if (makeModel.equalsIgnoreCase("Honda") && odometer > 10000){
-            return getOriginalCost() * .92;
-        } else if (makeModel.equalsIgnoreCase("Toyota")&& odometer > 10000) {
-            return getOriginalCost() * .92;
-        }else if (odometer > 100000) {
-            return getOriginalCost() * .75;
-        } else if (year >= 0 && year <= 3){
-            return getOriginalCost() * .97;
-        } else if (year >= 4 && year <= 6) {
-            return getOriginalCost() * .94;
-        } else if (year >= 7 && year <= 10) {
-            return  getOriginalCost() * .92;
-        } else if (year >= 10) {
-            return getOriginalCost() - 1000;
+        int currentYear = LocalDate.now().getYear();
+        int age = currentYear - year;
+        double value = 0.0;
+
+        if (age <= 3){
+            for (int i = 0; i < age; i++) {
+                value = .97 * getOriginalCost();
+            }
+        } else if (age <= 6) {
+            for (int i = 0; i < age; i++) {
+                value = .94 * getOriginalCost();
+            }
+        } else if (age <= 10) {
+            for (int i = 0; i < age; i++) {
+                value = .92 * getOriginalCost();
+            }
+        }else {
+            value = getOriginalCost() - 1000;
         }
-        return super.getValue();
+        if (!(makeModel.equalsIgnoreCase("Honda") || makeModel.equalsIgnoreCase("Toyota") && odometer > 100000)){
+            value *= .75;
+        }return value;
     }
 }
